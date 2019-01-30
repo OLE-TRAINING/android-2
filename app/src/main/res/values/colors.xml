@@ -5,4 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="backroundLogin">#f0f1f2</color>
     <color name="titlecolor">#5b5a5a</color>
+    <color name="dark_orange">#fe3824</color>
+    <color name="light_orange">#ff7260</color>
+    <color name="medium_orange">#f44336</color>
+    <color name="white">#ffffff</color>
+    <color name="light_blue">#129793</color>
 </resources>

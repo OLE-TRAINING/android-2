@@ -9,17 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login" />
-        <activity android:name=".NewAccount" />
-        <activity android:name=".TokenValidation">
+        <activity android:name=".Login"></activity>
+        <activity android:name=".NewAccount"></activity>
+        <activity android:name=".TokenValidation"></activity>
+        <activity android:name=".PasswordLogin">
+
+        </activity>
+        <activity android:name=".SignUpContinue"></activity>
+        <activity android:name=".NewPassword"></activity>
+        <activity android:name=".ResetPasswordConfirm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".PasswordLogin">
-
         </activity>
     </application>
 
