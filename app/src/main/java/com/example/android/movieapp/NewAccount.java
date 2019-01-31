@@ -1,25 +1,23 @@
 package com.example.android.movieapp;
 
-import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 public class NewAccount extends AppCompatActivity {
 
-   private New_Account_Error nameView;
+   private NewAccountError nameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_new_account);
-        nameView = (New_Account_Error) findViewById(R.id.nameNewAccount);
+        nameView = (NewAccountError) findViewById(R.id.name_new_account);
         nameView.setValue("Nome Inválido","   Nome Completo");
-        New_Account_Error userView = (New_Account_Error) findViewById(R.id.userNewAccount);
+        NewAccountError userView = (NewAccountError) findViewById(R.id.user_new_account);
         userView.setValue("Nome de usuário obrigatório","   Nome de usuário");
-        New_Account_Error passwordView = (New_Account_Error) findViewById(R.id.passwordNewAccount);
+        NewAccountError passwordView = (NewAccountError) findViewById(R.id.password_new_account);
         passwordView.setValue("Senha inválida","   Senha");
 
     }

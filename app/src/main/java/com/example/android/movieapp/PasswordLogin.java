@@ -6,14 +6,14 @@ import android.view.View;
 
 public class PasswordLogin extends AppCompatActivity {
 
-    Sign_in_error viewPassword;
+    SignInError viewPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_login);
 
-         viewPassword = (Sign_in_error) findViewById(R.id.viewPasswordLogin);
+         viewPassword = (SignInError) findViewById(R.id.view_password_login);
 
     }
 

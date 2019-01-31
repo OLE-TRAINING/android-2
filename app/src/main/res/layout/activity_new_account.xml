@@ -8,11 +8,11 @@
     android:paddingRight="@dimen/PaddinLRContraint"
     android:orientation="vertical"
     android:background="@color/backroundLogin"
-    android:id="@+id/NewAccount">
+    android:id="@+id/new_account">
 
 
     <TextView
-        android:id="@+id/textNewAccount"
+        android:id="@+id/text_new_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/emailNewAccount"
+        android:id="@+id/email_new_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -37,10 +37,10 @@
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
         android:text="@string/email_test"
         android:textColor="@color/titlecolor"
-        android:textSize="16dp"
+        android:textSize="@dimen/email_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNewAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/text_new_account" />
 
     <!--<EditText
         android:id="@+id/nameNewAccount"
@@ -56,17 +56,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailNewAccount" /> -->
 
-    <com.example.android.movieapp.New_Account_Error
-        android:id="@+id/nameNewAccount"
+    <com.example.android.movieapp.NewAccountError
+        android:id="@+id/name_new_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:layout_marginTop="64dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_marginBottom="@dimen/small_dimens_marginLR"
+        app:layout_constraintBottom_toTopOf="@+id/button_token_validation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailNewAccount"></com.example.android.movieapp.New_Account_Error>
+        app:layout_constraintTop_toBottomOf="@+id/email_new_account"></com.example.android.movieapp.NewAccountError>
 
     <!--<EditText
         android:id="@+id/userNewAccount"
@@ -84,15 +84,15 @@
         app:layout_constraintTop_toBottomOf="@+id/nameNewAccount" />
         -->
 
-    <com.example.android.movieapp.New_Account_Error
-        android:id="@+id/userNewAccount"
+    <com.example.android.movieapp.NewAccountError
+        android:id="@+id/user_new_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/small_dimens_marginLR"
+        android:layout_marginTop="@dimen/small_dimens_marginLR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameNewAccount"></com.example.android.movieapp.New_Account_Error>
+        app:layout_constraintTop_toBottomOf="@+id/name_new_account"></com.example.android.movieapp.NewAccountError>
 
    <!-- <EditText
         android:id="@+id/passwordNewAccount"
@@ -110,27 +110,27 @@
         app:layout_constraintTop_toBottomOf="@+id/userNewAccount"
         /> -->
 
-    <com.example.android.movieapp.New_Account_Error
-        android:id="@+id/passwordNewAccount"
+    <com.example.android.movieapp.NewAccountError
+        android:id="@+id/password_new_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/small_dimens_marginLR"
+        android:layout_marginTop="@dimen/small_dimens_marginLR"
         android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNewAccount"></com.example.android.movieapp.New_Account_Error>
+        app:layout_constraintTop_toBottomOf="@+id/user_new_account"></com.example.android.movieapp.NewAccountError>
 
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_new_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/button_bottom"
         android:background="@drawable/shape"
         android:backgroundTint="@color/light_blue"
         android:text="@string/advance"
@@ -139,6 +139,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordNewAccount"
+        app:layout_constraintTop_toBottomOf="@+id/password_new_account"
         app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>

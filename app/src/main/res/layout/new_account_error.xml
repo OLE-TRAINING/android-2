@@ -7,9 +7,9 @@
     android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/editNewAccountError"
+        android:id="@+id/edit_new_account_error"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/edit_height"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_bottom_border"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textNewAccountError"
+        android:id="@+id/text_new_account_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -29,10 +29,10 @@
         android:visibility="invisible"
         android:textColor="@color/medium_orange"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNewAccountError" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_new_account_error" />
 
     <ImageButton
-        android:id="@+id/imageNewAccountError"
+        android:id="@+id/image_new_account_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -42,6 +42,6 @@
         android:visibility="invisible"
         android:src="@drawable/ic_report_error_new_user"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNewAccountError" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_new_account_error" />
 
 </android.support.constraint.ConstraintLayout>

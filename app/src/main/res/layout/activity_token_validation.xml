@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/textToken"
+        android:id="@+id/text_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/emailToken"
+        android:id="@+id/email_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -36,25 +36,25 @@
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
         android:text="@string/email_test"
         android:textColor="@color/dark_orange"
-        android:textSize="16dp"
+        android:textSize="@dimen/email_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textToken" />
+        app:layout_constraintTop_toBottomOf="@+id/text_token" />
 
     <EditText
-        android:id="@+id/codeToker"
+        android:id="@+id/code_token"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/edit_height"
         android:layout_marginTop="92dp"
         android:background="@drawable/edittext_bottom_border"
         android:hint="@string/code_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailToken" />
+        app:layout_constraintTop_toBottomOf="@+id/email_token" />
 
     <TextView
-        android:id="@+id/textLinkToken"
+        android:id="@+id/text_link_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -63,28 +63,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeToker" />
+        app:layout_constraintTop_toBottomOf="@+id/code_token" />
 
     <TextView
-        android:id="@+id/linkToken"
+        android:id="@+id/link_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:text="@string/send_again"
         android:textColor="@color/light_orange"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textLinkToken"
-        app:layout_constraintStart_toEndOf="@+id/textLinkToken" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/text_link_token"
+        app:layout_constraintStart_toEndOf="@+id/text_link_token" />
 
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_token_validation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="@dimen/button_bottom"
         android:background="@drawable/shape"
         android:backgroundTint="@color/light_blue"
         android:text="@string/code_validation"

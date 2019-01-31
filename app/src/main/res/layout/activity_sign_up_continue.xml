@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/PaddinLRContraint">
 
     <TextView
-        android:id="@+id/textContinue"
+        android:id="@+id/text_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/emailContinue"
+        android:id="@+id/email_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -34,12 +34,13 @@
         android:text="@string/email_test"
         android:textColor="@color/dark_orange"
         android:textStyle="bold"
+        android:textSize="@dimen/email_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textContinue" />
+        app:layout_constraintTop_toBottomOf="@+id/text_continue" />
 
     <EditText
-        android:id="@+id/codeContinue"
+        android:id="@+id/code_continue"
         android:layout_width="match_parent"
         android:layout_height="@dimen/edit_height"
         android:layout_marginTop="56dp"
@@ -47,10 +48,10 @@
         android:hint="@string/code_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailContinue" />
+        app:layout_constraintTop_toBottomOf="@+id/email_continue" />
 
     <TextView
-        android:id="@+id/textNotReciveContinue"
+        android:id="@+id/text_not_recive_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
@@ -58,13 +59,13 @@
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
         android:text="@string/code_not_recive"
         android:textColor="@color/titlecolor"
-        app:layout_constraintEnd_toStartOf="@+id/textLinkContinue"
+        app:layout_constraintEnd_toStartOf="@+id/text_link_continue"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeContinue" />
+        app:layout_constraintTop_toBottomOf="@+id/code_continue" />
 
     <TextView
-        android:id="@+id/textLinkContinue"
+        android:id="@+id/text_link_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -73,14 +74,15 @@
         android:textColor="@color/light_orange"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeContinue" />
+        app:layout_constraintTop_toBottomOf="@+id/code_continue" />
 
     <Button
+        android:id="@+id/button_sign_up_continue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:layout_marginEnd="@dimen/small_dimens_marginLR"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="@dimen/button_bottom"
         android:background="@drawable/shape"
         android:backgroundTint="@color/light_blue"
         android:text="@string/code_validation"
