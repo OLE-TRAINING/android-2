@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backroundLogin"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/PaddinLRContraint"
+    android:paddingRight="@dimen/PaddinLRContraint">
+
+    <TextView
+        android:id="@+id/text_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="monospace"
+        android:text="@string/text_sign_up_continue"
+        android:textAlignment="center"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/email_test"
+        android:textColor="@color/dark_orange"
+        android:textSize="@dimen/email_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/text_continue"
+        app:layout_constraintStart_toStartOf="@+id/text_continue"
+        app:layout_constraintTop_toBottomOf="@+id/text_continue" />
+
+    <EditText
+        android:id="@+id/code_continue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_bottom_border"
+        android:hint="@string/code_hint"
+        android:paddingLeft="@dimen/hint_position"
+        app:layout_constraintBottom_toTopOf="@+id/button_sign_up_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_continue" />
+
+    <TextView
+        android:id="@+id/text_not_recive_continue"
+        android:layout_width="146dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/code_not_recive"
+        android:textColor="@color/titlecolor"
+        app:layout_constraintEnd_toStartOf="@+id/text_link_continue"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_continue" />
+
+    <TextView
+        android:id="@+id/text_link_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/send_again"
+        android:textColor="@color/light_orange"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_continue" />
+
+    <Button
+        android:id="@+id/button_sign_up_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape"
+
+        android:backgroundTint="@color/light_blue"
+        android:text="@string/code_validation"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

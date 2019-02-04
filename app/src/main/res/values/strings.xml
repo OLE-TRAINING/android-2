@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="code_validation">Validar código</string>
+    <string name="send_again">Enviar novamente</string>
+    <string name="code_not_recive">Não recebeu o código?</string>
+    <string name="code_hint">Código</string>
+    <string name="email_test">teste@teste.com</string>
+    <string name="text_token_validation">PARA SUA SEGURANÇA, INFORME O CÓDIGO ENVIADO PARA O SEU E-MAIL:</string>
+    <string name="text_sign_up_continue">IDENTIFICAMOS QUE VOCÊ JÁ INICIOU UM CADASTRO, PARA CONCLUIRMOS, INFORME O CÓDIGO ENVIADO PARA O SEU E-MAIL:</string>
+    <string name="text_login">INFORME SUA CONTA DE E-MAIL</string>
+    <string name="email_hint">   E-mail</string>
+    <string name="advance">Avançar</string>
+    <string name="text_new_account">Crie sua nova conta</string>
+    <string name="complete_name">Nome completo</string>
+    <string name="name_user">   Nome de usuário</string>
+    <string name="password_hint">   Senha</string>
+    <string name="text_password_login">INFORME SUA SENHA</string>
+    <string name="password_forgot">Esqueceu sua senha?</string>
+    <string name="log_in">Entrar</string>
+    <string name="validation_token">Token de validação</string>
+    <string name="create_new_password">CRIE SUA NOVA SENHA</string>
+    <string name="new_password_hint">   Nova Senha</string>
+    <string name="confirm_new_password">Confirme sua senha</string>
+    <string name="change_password">Alterear senha</string>
+    <string name="confirm_info">CONFIRME AS INFORMAÇÕES DE SUA CONTA</string>
+    <string name="invalid_name">Nome Inválido</string>
+    <string name="username_required">Nome de usuário obrigatório</string>
+    <string name="invalid_password">Senha inválida</string>
+    <string name="invalid_email">Email inválido</string>
+    <string name="example_email">exemplo@email.com</string>
+    <string name="invalid_token">Token inválido</string>
 </resources>

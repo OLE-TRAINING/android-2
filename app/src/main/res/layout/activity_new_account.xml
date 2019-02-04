@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/PaddinLRContraint"
+    android:paddingRight="@dimen/PaddinLRContraint"
+    android:orientation="vertical"
+    android:background="@color/backroundLogin"
+    android:id="@+id/new_account">
+
+
+    <TextView
+        android:id="@+id/text_new_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/marginTopLogin"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="monospace"
+        android:text="@string/text_new_account"
+        android:textAlignment="center"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_new_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/email_test"
+        android:textColor="@color/titlecolor"
+        android:textSize="@dimen/email_size"
+        app:layout_constraintEnd_toEndOf="@+id/text_new_account"
+        app:layout_constraintStart_toStartOf="@+id/text_new_account"
+        app:layout_constraintTop_toBottomOf="@+id/text_new_account" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button_new_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_new_account">
+
+        <com.example.android.movieapp.NewAccountError
+            android:id="@+id/name_new_account"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="152dp"></com.example.android.movieapp.NewAccountError>
+
+
+        <com.example.android.movieapp.NewAccountError
+            android:id="@+id/user_new_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="246dp"></com.example.android.movieapp.NewAccountError>
+
+
+        <com.example.android.movieapp.NewAccountError
+            android:id="@+id/password_new_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="330dp"></com.example.android.movieapp.NewAccountError>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_new_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/light_blue"
+        android:onClick="buttonNewAccount"
+        android:text="@string/advance"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
+
+</ScrollView>
