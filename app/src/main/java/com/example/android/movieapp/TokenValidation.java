@@ -18,6 +18,5 @@ public class TokenValidation extends AppCompatActivity {
         setContentView(R.layout.activity_token_validation);
 
 
-
     }
 }

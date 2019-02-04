@@ -1,7 +1,14 @@
 package com.example.android.movieapp;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
@@ -39,6 +46,26 @@ public class NewAccountError extends ConstraintLayout {
         textView = (TextView) findViewById(R.id.text_new_account_error);
         editText = (EditText) findViewById(R.id.edit_new_account_error);
         imageView = (ImageButton) findViewById(R.id.image_new_account_error);
+
+        editText.addTextChangedListener(new TextWatcher() {
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //here is your code
+                textView.setVisibility(INVISIBLE);
+                imageView.setVisibility(INVISIBLE);
+                editText.setBackgroundResource(R.drawable.edittext_bottom_border);
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // TODO Auto-generated method stub
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+            }
+        });
+
     }
 
     public void setValue(String value,String hint) {
@@ -47,8 +74,39 @@ public class NewAccountError extends ConstraintLayout {
 
     }
 
-    public void setVisible(View v){
+    public void setInvisibleError(View v){
+
+    }
+
+    public String getEditText(){
+       return editText.getText().toString();
+    }
+
+
+    public void setVisibleError(View v){
         textView.setVisibility(v.VISIBLE);
         imageView.setVisibility(v.VISIBLE);
+        editText.setBackgroundResource(R.drawable.errorborder);
+    }
+
+
+
+    public void setText(){
+        editText.setText("exemplo@mail.com");
+    }
+
+    public void setLength(int maxLength){
+        InputFilter[] fArray = new InputFilter[1];
+        fArray[0] = new InputFilter.LengthFilter(maxLength);
+        editText.setFilters(fArray);
+    }
+
+    public void setPasswordType(){
+        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+    }
+
+    public int getLength(){
+
+        return editText.length();
     }
 }

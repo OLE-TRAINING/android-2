@@ -27,21 +27,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_text_login"
+    <com.example.android.movieapp.NewAccountError
+        android:id="@+id/edit_email_login"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/edit_height"
-        android:layout_marginStart="@dimen/small_dimens_marginLR"
+        android:layout_height="86dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/small_dimens_marginLR"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/edittext_bottom_border"
-        android:ellipsize="start"
-        android:hint="@string/email_hint"
         app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+        app:layout_constraintTop_toBottomOf="@+id/text_login"></com.example.android.movieapp.NewAccountError>
 
     <Button
         android:id="@+id/button_login"
@@ -52,6 +49,7 @@
         android:backgroundTint="@color/light_blue"
         android:text="@string/advance"
         android:textColor="@color/white"
+        android:onClick="validarEmail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.75"

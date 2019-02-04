@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,9 +22,9 @@
         android:id="@+id/text_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_dimens_marginLR"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="@dimen/marginTopLogin"
-        android:layout_marginEnd="@dimen/small_dimens_marginLR"
+        android:layout_marginEnd="8dp"
         android:fontFamily="monospace"
         android:text="@string/text_token_validation"
         android:textAlignment="center"
@@ -31,50 +38,64 @@
         android:id="@+id/email_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_dimens_marginLR"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/small_dimens_marginLR"
         android:text="@string/email_test"
         android:textColor="@color/dark_orange"
         android:textSize="@dimen/email_size"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_token"
+        app:layout_constraintStart_toStartOf="@+id/text_token"
         app:layout_constraintTop_toBottomOf="@+id/text_token" />
 
     <EditText
         android:id="@+id/code_token"
         android:layout_width="match_parent"
         android:layout_height="@dimen/edit_height"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_bottom_border"
         android:hint="@string/code_hint"
+        android:paddingLeft="@dimen/hint_position"
+        app:layout_constraintBottom_toTopOf="@+id/button_token_validation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_token" />
 
-    <TextView
-        android:id="@+id/text_link_token"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/code_not_recive"
-        android:textColor="@color/titlecolor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/code_token" />
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/code_token"
+        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintStart_toStartOf="@+id/code_token"
+        app:layout_constraintTop_toBottomOf="@+id/code_token">
 
-    <TextView
-        android:id="@+id/link_token"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_dimens_marginLR"
-        android:text="@string/send_again"
-        android:textColor="@color/light_orange"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text_link_token"
-        app:layout_constraintStart_toEndOf="@+id/text_link_token" />
+        <TextView
+            android:id="@+id/text_link_token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+
+            android:layout_marginEnd="8dp"
+            android:text="@string/code_not_recive"
+            android:textColor="@color/titlecolor" />
+
+        <TextView
+            android:id="@+id/link_token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:text="@string/send_again"
+            android:textColor="@color/light_orange"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
 
 
 
@@ -82,9 +103,9 @@
         android:id="@+id/button_token_validation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_dimens_marginLR"
-        android:layout_marginEnd="@dimen/small_dimens_marginLR"
-        android:layout_marginBottom="@dimen/button_bottom"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/shape"
         android:backgroundTint="@color/light_blue"
         android:text="@string/code_validation"
@@ -93,3 +114,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
+</ScrollView>

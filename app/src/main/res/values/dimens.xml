@@ -7,4 +7,5 @@
     <dimen name="title_size">22dp</dimen>
     <dimen name="button_bottom">32dp</dimen>
     <dimen name="email_size">16dp</dimen>
+    <dimen name="hint_position">20dp</dimen>
 </resources>
