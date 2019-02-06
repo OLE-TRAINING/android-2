@@ -37,9 +37,6 @@ public class NewAccountError extends ConstraintLayout {
     }
 
 
-
-
-
     private void init() {
         inflate(getContext(), R.layout.new_account_error, this);
 
@@ -60,6 +57,7 @@ public class NewAccountError extends ConstraintLayout {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // TODO Auto-generated method stub
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 // TODO Auto-generated method stub
@@ -68,44 +66,43 @@ public class NewAccountError extends ConstraintLayout {
 
     }
 
-    public void setValue(String value,String hint) {
-     textView.setText(value);
-     editText.setHint(hint);
+    public void setValue(String value, String hint) {
+        textView.setText(value);
+        editText.setHint(hint);
 
     }
 
-    public void setInvisibleError(View v){
+    public void setInvisibleError(View v) {
 
     }
 
-    public String getEditText(){
-       return editText.getText().toString();
+    public String getEditText() {
+        return editText.getText().toString();
     }
 
 
-    public void setVisibleError(View v){
+    public void setVisibleError(View v) {
         textView.setVisibility(v.VISIBLE);
         imageView.setVisibility(v.VISIBLE);
         editText.setBackgroundResource(R.drawable.errorborder);
     }
 
 
-
-    public void setText(){
+    public void setText() {
         editText.setText("exemplo@mail.com");
     }
 
-    public void setLength(int maxLength){
+    public void setLength(int maxLength) {
         InputFilter[] fArray = new InputFilter[1];
         fArray[0] = new InputFilter.LengthFilter(maxLength);
         editText.setFilters(fArray);
     }
 
-    public void setPasswordType(){
+    public void setPasswordType() {
         editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
-    public int getLength(){
+    public int getLength() {
 
         return editText.length();
     }

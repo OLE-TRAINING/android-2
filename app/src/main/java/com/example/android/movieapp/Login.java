@@ -26,26 +26,24 @@ public class Login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
         emailView = (NewAccountError) findViewById(R.id.edit_email_login);
-        emailView.setValue(getString(R.string.invalid_email),getString(R.string.email_hint));
-
+        emailView.setValue(getString(R.string.invalid_email), getString(R.string.email_hint));
 
     }
 
-    public static boolean validarEmail(String email){
+    public static boolean validarEmail(String email) {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
 
     public void validarEmail(View view) {
 
-        email=emailView.getEditText();
+        email = emailView.getEditText();
 
-        if(validarEmail(email)){
+        if (validarEmail(email)) {
 
-        }
-        else{
+        } else {
 
-            emailView.setValue(getString(R.string.invalid_email),getString(R.string.example_email));
+            emailView.setValue(getString(R.string.invalid_email), getString(R.string.example_email));
 
             emailView.setVisibleError(view);
 

@@ -32,7 +32,7 @@ public class SignInError extends ConstraintLayout {
 
     }
 
-    public void setVisible(View v){
+    public void setVisible(View v) {
 
         textView.setVisibility(v.VISIBLE);
     }

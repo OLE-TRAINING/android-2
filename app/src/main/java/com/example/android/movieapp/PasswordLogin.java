@@ -19,7 +19,7 @@ public class PasswordLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_login);
 
-         viewPassword = (SignInError) findViewById(R.id.view_password_login);
+        viewPassword = (SignInError) findViewById(R.id.view_password_login);
 
         editPassword = (EditText) findViewById(R.id.password_edit_password);
 
@@ -29,7 +29,7 @@ public class PasswordLogin extends AppCompatActivity {
 
         String password = editPassword.getText().toString();
 
-            viewPassword.setVisible(view);
+        viewPassword.setVisible(view);
 
     }
 }

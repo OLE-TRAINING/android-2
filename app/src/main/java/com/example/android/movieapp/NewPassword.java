@@ -13,6 +13,7 @@ public class NewPassword extends AppCompatActivity {
 
     NewAccountError tokenView;
     NewAccountError newPasswordView;
+    NewAccountError confirmPasswordView;
 
     private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$";
 
@@ -25,14 +26,16 @@ public class NewPassword extends AppCompatActivity {
 
         tokenView = (NewAccountError) findViewById(R.id.token_new_password);
         tokenView.setValue(getString(R.string.invalid_token),getString(R.string.validation_token));
+        tokenView.setLength(6);
 
         newPasswordView = (NewAccountError) findViewById(R.id.new_password_edit_new_passaword);
         newPasswordView.setValue(getString(R.string.invalid_password),getString(R.string.new_password_hint));
+        newPasswordView.setPasswordType();
 
-
+        confirmPasswordView = (NewAccountError) findViewById(R.id.confirm_new_password);
+        confirmPasswordView.setValue(getString(R.string.invalid_password),getString(R.string.confirm_new_password));
+        confirmPasswordView.setPasswordType();
     }
-
-
 
     public static boolean passwordValidation(String name){
         Matcher matcher = pattern.matcher(name);
@@ -44,6 +47,7 @@ public class NewPassword extends AppCompatActivity {
 
         int tokenSize = tokenView.getLength();
         String password=newPasswordView.getEditText();
+        String confirmPassword = confirmPasswordView.getEditText();
         if(tokenSize!=6){
             tokenView.setVisibleError(view);
         }
@@ -54,6 +58,17 @@ public class NewPassword extends AppCompatActivity {
 
         else{
             newPasswordView.setVisibleError(view);
+        }
+
+        if((password).equals(confirmPassword)){
+
+
+        }
+
+        else{
+            System.out.println(password);
+            System.out.println(confirmPassword);
+            confirmPasswordView.setVisibleError(view);
         }
     }
 }

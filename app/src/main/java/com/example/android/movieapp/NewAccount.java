@@ -42,26 +42,6 @@ public class NewAccount extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_D:
-
-                return true;
-            case KeyEvent.KEYCODE_F:
-
-                return true;
-            case KeyEvent.KEYCODE_J:
-
-                return true;
-            case KeyEvent.KEYCODE_K:
-
-                return true;
-            default:
-                return super.onKeyUp(keyCode, event);
-        }
-    }
-
     public static boolean nameValidation(String name){
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
