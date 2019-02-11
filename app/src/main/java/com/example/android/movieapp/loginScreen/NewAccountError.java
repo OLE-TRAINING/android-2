@@ -1,10 +1,7 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
 import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -14,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.android.movieapp.R;
 
 public class NewAccountError extends ConstraintLayout {
 

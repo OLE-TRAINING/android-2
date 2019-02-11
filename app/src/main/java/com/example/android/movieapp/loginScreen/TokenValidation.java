@@ -1,12 +1,9 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+
+import com.example.android.movieapp.R;
 
 public class TokenValidation extends AppCompatActivity {
 

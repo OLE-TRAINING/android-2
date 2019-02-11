@@ -29,4 +29,14 @@
     <string name="invalid_email">Email inválido</string>
     <string name="example_email">exemplo@email.com</string>
     <string name="invalid_token">Token inválido</string>
+    <string name="tab_Release">Lançamentos</string>
+    <string name="tab_Action">Ação</string>
+    <string name="tab_Adventure">Aventura</string>
+    <string name="tab_Animamtion">Animação</string>
+    <string name="tab_comedy">Comédia</string>
+    <string name="tab_Drama">Drama</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

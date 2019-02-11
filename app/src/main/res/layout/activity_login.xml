@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.android.movieapp.NewAccountError
+    <com.example.android.movieapp.loginScreen.NewAccountError
         android:id="@+id/edit_email_login"
         android:layout_width="match_parent"
         android:layout_height="86dp"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login"></com.example.android.movieapp.NewAccountError>
+        app:layout_constraintTop_toBottomOf="@+id/text_login"></com.example.android.movieapp.loginScreen.NewAccountError>
 
     <Button
         android:id="@+id/button_login"

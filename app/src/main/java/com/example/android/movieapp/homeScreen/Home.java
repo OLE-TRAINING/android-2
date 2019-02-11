@@ -1,19 +1,16 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.homeScreen;
 
-import android.app.Fragment;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.android.movieapp.R;
 
 public class Home extends AppCompatActivity {
 
@@ -30,12 +27,17 @@ public class Home extends AppCompatActivity {
         titleActionBar = (TextView) findViewById(R.id.titleActionBar);
         titleActionBar.setText(Html.fromHtml(text));
 
-        BottomNavigationView bottomNav = findViewById(R.id.navigation);
+        BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content, new HomeFragment()).commit();
 
+
+
+
     }
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

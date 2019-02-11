@@ -1,9 +1,10 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
+
+import com.example.android.movieapp.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

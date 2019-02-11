@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.movieapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,27 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Login"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".NewAccount"></activity>
-        <activity android:name=".TokenValidation"></activity>
-        <activity
-            android:name=".PasswordLogin"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".SignUpContinue"></activity>
-        <activity android:name=".NewPassword">
+            android:name=".loginScreen.Login"
+            android:windowSoftInputMode="adjustResize">
 
-
-        </activity>
-        <activity
-            android:name=".ResetPasswordConfirm"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".loginScreen.NewAccount"></activity>
+        <activity android:name=".loginScreen.TokenValidation"></activity>
+        <activity
+            android:name=".loginScreen.PasswordLogin"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".loginScreen.SignUpContinue"></activity>
+        <activity android:name=".loginScreen.NewPassword">
+
+
+        </activity>
+        <activity
+            android:name=".loginScreen.ResetPasswordConfirm"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".homeScreen.Home">
+
         </activity>
     </application>
 

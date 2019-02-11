@@ -1,7 +1,9 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.android.movieapp.R;
 
 public class SignUpContinue extends AppCompatActivity {
 

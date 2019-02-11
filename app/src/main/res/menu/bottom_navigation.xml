@@ -4,13 +4,14 @@
     <item
         android:id="@+id/icon_home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title=""
+        />
 
     <item
         android:id="@+id/icon_favorite"
         android:iconTint="@color/white"
         android:icon="@drawable/ic_favorite"
-        android:title="Favorite" />
+        android:title="" />
 
 
 
@@ -18,7 +19,7 @@
         android:id="@+id/icon_search"
         android:iconTint="@color/white"
         android:icon="@drawable/ic_search"
-        android:title="Search" />
+        android:title="" />
 
 
 

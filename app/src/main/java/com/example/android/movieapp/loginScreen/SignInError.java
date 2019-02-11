@@ -1,10 +1,12 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.android.movieapp.R;
 
 public class SignInError extends ConstraintLayout {
 

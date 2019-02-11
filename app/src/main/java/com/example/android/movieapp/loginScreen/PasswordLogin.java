@@ -1,12 +1,11 @@
-package com.example.android.movieapp;
+package com.example.android.movieapp.loginScreen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.example.android.movieapp.R;
 
 public class PasswordLogin extends AppCompatActivity {
 

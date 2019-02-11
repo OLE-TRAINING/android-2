@@ -58,28 +58,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_new_account">
 
-        <com.example.android.movieapp.NewAccountError
+        <com.example.android.movieapp.loginScreen.NewAccountError
             android:id="@+id/name_new_account"
             android:layout_width="match_parent"
             android:layout_height="77dp"
             tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="152dp"></com.example.android.movieapp.NewAccountError>
+            tools:layout_editor_absoluteY="152dp"></com.example.android.movieapp.loginScreen.NewAccountError>
 
 
-        <com.example.android.movieapp.NewAccountError
+        <com.example.android.movieapp.loginScreen.NewAccountError
             android:id="@+id/user_new_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="246dp"></com.example.android.movieapp.NewAccountError>
+            tools:layout_editor_absoluteY="246dp"></com.example.android.movieapp.loginScreen.NewAccountError>
 
 
-        <com.example.android.movieapp.NewAccountError
+        <com.example.android.movieapp.loginScreen.NewAccountError
             android:id="@+id/password_new_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="330dp"></com.example.android.movieapp.NewAccountError>
+            tools:layout_editor_absoluteY="330dp"></com.example.android.movieapp.loginScreen.NewAccountError>
 
     </LinearLayout>
     <Button
