@@ -1,11 +1,14 @@
 package com.example.android.movieapp.connect;
 
-public class User {
+import java.io.Serializable;
 
-   private String email;
+public class User implements Serializable {
+
+    private String email;
     private String completeName;
     private String username;
     private String registrationStatus;
+    private String password;
 
 
     public String getEmail() {
@@ -38,5 +41,13 @@ public class User {
 
     public void setRegistrationStatus(String registrationStatus) {
         this.registrationStatus = registrationStatus;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String passWord) {
+        this.password = passWord;
     }
 }

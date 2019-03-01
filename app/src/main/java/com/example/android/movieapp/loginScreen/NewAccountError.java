@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
@@ -43,6 +44,7 @@ public class NewAccountError extends ConstraintLayout {
         editText = (EditText) findViewById(R.id.edit_new_account_error);
         imageView = (ImageButton) findViewById(R.id.image_new_account_error);
 
+
         editText.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -80,10 +82,13 @@ public class NewAccountError extends ConstraintLayout {
     }
 
 
-    public void setVisibleError(View v) {
-        textView.setVisibility(v.VISIBLE);
-        imageView.setVisibility(v.VISIBLE);
-        editText.setBackgroundResource(R.drawable.errorborder);
+    public void setVisibleError(View v,Boolean b) {
+
+        if(!b) {
+            textView.setVisibility(v.VISIBLE);
+            imageView.setVisibility(v.VISIBLE);
+            editText.setBackgroundResource(R.drawable.errorborder);
+        }
     }
 
 
@@ -98,7 +103,9 @@ public class NewAccountError extends ConstraintLayout {
     }
 
     public void setPasswordType() {
-        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+        editText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
     public int getLength() {

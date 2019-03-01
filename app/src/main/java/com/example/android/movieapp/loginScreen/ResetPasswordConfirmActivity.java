@@ -5,14 +5,11 @@ import android.os.Bundle;
 
 import com.example.android.movieapp.R;
 
-public class TokenValidation extends AppCompatActivity {
-
-
+public class ResetPasswordConfirmActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_token_validation);
-
+        setContentView(R.layout.activity_reset_password_confirm);
     }
 }

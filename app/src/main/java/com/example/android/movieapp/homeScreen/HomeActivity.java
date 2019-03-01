@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.android.movieapp.R;
 
-public class Home extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     TextView titleActionBar;
     String text = "<font color=#FFFFFF><b>OT</b></font><font color=#FFFFFF>MOVIES</font>";

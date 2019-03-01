@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".loginScreen.Login"
+            android:name=".loginScreen.LoginActivity"
             android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
@@ -19,21 +19,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".loginScreen.NewAccount"></activity>
-        <activity android:name=".loginScreen.TokenValidation"></activity>
-        <activity
-            android:name=".loginScreen.PasswordLogin"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".loginScreen.SignUpContinue"></activity>
-        <activity android:name=".loginScreen.NewPassword">
-
 
         </activity>
+        <activity android:name=".loginScreen.NewAccountActivity"></activity>
+        <activity android:name=".loginScreen.TokenValidationActivity"
+            ></activity>
         <activity
-            android:name=".loginScreen.ResetPasswordConfirm"
+            android:name=".loginScreen.PasswordLoginActivity"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
+        <activity android:name=".loginScreen.SignUpContinueActivity"></activity>
+        <activity android:name=".loginScreen.NewPasswordActivity">
+
+        </activity>
+        <activity
+            android:name=".loginScreen.ResetPasswordConfirmActivity"
             android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".homeScreen.Home">
+        <activity android:name=".homeScreen.HomeActivity">
 
         </activity>
     </application>
