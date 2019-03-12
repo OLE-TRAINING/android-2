@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.example.android.movieapp.R;
 import com.example.android.movieapp.connect.User;
 import com.example.android.movieapp.homeScreen.HomeActivity;
-import com.example.android.movieapp.viewModel.PasswordLoginViewModel;
+import com.example.android.movieapp.viewModelLogin.PasswordLoginViewModel;
 
 public class PasswordLoginActivity extends AppCompatActivity {
 

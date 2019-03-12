@@ -6,15 +6,16 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    int nNumOfTabs;
-    ReleaseFragment release = ReleaseFragment.newInstance("LANÇAMENTO");
-    ReleaseFragment action = ReleaseFragment.newInstance("AÇÃO");
-    ReleaseFragment adventure  = ReleaseFragment.newInstance("Aventura");
-    ReleaseFragment animation= ReleaseFragment.newInstance("Animação");
-    ReleaseFragment comedy  = ReleaseFragment.newInstance("Comédia");
-    ReleaseFragment drama  = ReleaseFragment.newInstance("Drama");
+    private int nNumOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+//    private MovieListFragment release = MovieListFragment.newInstance();
+//    private MovieListFragment action = MovieListFragment.newInstance();
+//    private MovieListFragment adventure  = MovieListFragment.newInstance();
+//    private MovieListFragment animation = MovieListFragment.newInstance();
+//    private MovieListFragment comedy  = MovieListFragment.newInstance();
+//    private MovieListFragment drama  = MovieListFragment.newInstance();
+
+    PagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.nNumOfTabs = NumOfTabs;
     }
@@ -22,12 +23,12 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0: return release;
-            case 1: return action;
-            case 2: return adventure;
-            case 3: return animation;
-            case 4: return comedy;
-            case 5: return drama;
+            case 0: return MovieListFragment.newInstance();
+            case 1: return MovieListFragment.newInstance();
+            case 2: return MovieListFragment.newInstance();
+            case 3: return MovieListFragment.newInstance();
+            case 4: return MovieListFragment.newInstance();
+            case 5: return MovieListFragment.newInstance();
 
             default: return null;
         }

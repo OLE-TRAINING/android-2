@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.android.movieapp.R;
-import com.example.android.movieapp.viewModel.LoginViewModel;
+import com.example.android.movieapp.viewModelLogin.LoginViewModel;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;

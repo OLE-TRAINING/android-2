@@ -105,7 +105,7 @@ public class NewAccountError extends ConstraintLayout {
     public void setPasswordType() {
 
         editText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-//        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+       editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
     public int getLength() {

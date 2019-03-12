@@ -16,7 +16,6 @@
         android:layout_alignParentTop="true"
         >
 
-
         <android.support.constraint.ConstraintLayout
 
             android:layout_width="match_parent"
@@ -50,8 +49,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-
-
     <FrameLayout
         android:id="@+id/fragment_content"
         android:layout_width="match_parent"
@@ -59,8 +56,6 @@
         android:layout_above="@id/navigation"
         android:layout_below="@id/my_toolbar"
        >
-
-
 
     </FrameLayout>
 
@@ -74,10 +69,5 @@
         android:layout_alignParentBottom="true"
         app:itemIconTint="@color/white"
         app:menu="@menu/bottom_navigation"/>
-
-
-
-
-
 
 </RelativeLayout>

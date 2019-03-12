@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,6 +24,7 @@ public class LoginRepository {
 
 
     private EmailService emailService;
+    String nameHeader;
     private ErrorMessage errorMessage;
 
     public LiveData<ResponseService<User>> getUser(String email) {
@@ -34,13 +36,13 @@ public class LoginRepository {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.code() == 200) {
-
+                    User user = response.body();
+                    System.out.println(user);
                     auxUser.set(response.body());
                     auxUser.setStatus(true);
-                    data.postValue(auxUser);
-                }
 
-                else {
+                    data.postValue(auxUser);
+                } else {
                     try {
                         auxUser.setStatus(false);
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
@@ -78,15 +80,17 @@ public class LoginRepository {
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                System.out.println("ONNNNRESPONSE");
+
+//                            nameHeader = response.headers().get("x-access-token");
+//                            System.out.println("AQUII SERÁ PRINTADO O HEADEEER");
+//                            System.out.println(nameHeader);
+
                 if (response.code() == 200) {
 
                     auxUser.set(response.body());
                     auxUser.setStatus(true);
                     data.postValue(auxUser);
-                }
-
-                else {
+                } else {
                     try {
                         auxUser.setStatus(false);
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
@@ -113,5 +117,11 @@ public class LoginRepository {
         });
 
         return data;
+    }
+
+    public void getListGenres() {
+
+
+
     }
 }

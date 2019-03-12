@@ -1,12 +1,14 @@
 package com.example.android.movieapp.connect;
 
-public class ResponseService <T> {
+import java.io.Serializable;
 
-    private T t;
+public class ResponseService <ServiceBody> {
+
+    private ServiceBody serviceBody;
     private Boolean status;
 
-    public void set(T t) { this.t = t; }
-    public T get() { return t; }
+    public void set(ServiceBody serviceBody) { this.serviceBody = serviceBody; }
+    public ServiceBody get() { return serviceBody; }
 
     private ErrorMessage errorMessage;
 

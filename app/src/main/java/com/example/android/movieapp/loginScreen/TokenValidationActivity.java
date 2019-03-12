@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.movieapp.R;
-import com.example.android.movieapp.viewModel.TokenViewModel;
+import com.example.android.movieapp.viewModelLogin.TokenViewModel;
 
 public class TokenValidationActivity extends AppCompatActivity {
 

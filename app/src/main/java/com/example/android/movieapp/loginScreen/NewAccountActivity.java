@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.android.movieapp.R;
 import com.example.android.movieapp.connect.User;
-import com.example.android.movieapp.viewModel.NewAccountViewModel;
+import com.example.android.movieapp.viewModelLogin.NewAccountViewModel;
 
 public class NewAccountActivity extends AppCompatActivity {
 

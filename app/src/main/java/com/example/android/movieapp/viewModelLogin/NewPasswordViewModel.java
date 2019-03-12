@@ -1,4 +1,4 @@
-package com.example.android.movieapp.viewModel;
+package com.example.android.movieapp.viewModelLogin;
 
 import android.app.Application;
 import android.arch.lifecycle.MutableLiveData;
@@ -61,8 +61,9 @@ public class NewPasswordViewModel extends StatusSuperClass {
             newPasswordRepository.setNewPassword(newPasswordObj).observeForever(new Observer<ResponseService<User>>() {
                 @Override
                 public void onChanged(@Nullable ResponseService<User> responseService) {
-
+                    System.out.println("Service Passwrod entrouuuu");
                     if (responseService.getStatus()) {
+
                         getStatus().setValue("Ok");
 
                     } else{

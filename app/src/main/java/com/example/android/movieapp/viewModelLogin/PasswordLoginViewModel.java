@@ -1,4 +1,4 @@
-package com.example.android.movieapp.viewModel;
+package com.example.android.movieapp.viewModelLogin;
 
 import android.app.Application;
 import android.arch.lifecycle.MutableLiveData;
@@ -29,6 +29,8 @@ public class PasswordLoginViewModel extends StatusSuperClass {
 
     public void init(User user) {
 
+
+
         getLoading().setValue(true);
         loginRepository.setLogin(user).observeForever(new Observer<ResponseService<User>>() {
             @Override
@@ -47,6 +49,8 @@ public class PasswordLoginViewModel extends StatusSuperClass {
             }
 
         });
+
+
     }
 
     public void initSendToken(String email) {

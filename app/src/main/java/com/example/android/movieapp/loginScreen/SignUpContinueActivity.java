@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.BoringLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.movieapp.R;
-import com.example.android.movieapp.viewModel.SignUpContinueViewModel;
+import com.example.android.movieapp.viewModelLogin.SignUpContinueViewModel;
 
 public class SignUpContinueActivity extends AppCompatActivity {
 

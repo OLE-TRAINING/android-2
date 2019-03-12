@@ -1,4 +1,4 @@
-package com.example.android.movieapp.viewModel;
+package com.example.android.movieapp.viewModelLogin;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

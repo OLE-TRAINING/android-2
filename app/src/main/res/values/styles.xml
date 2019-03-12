@@ -14,10 +14,11 @@
         <item name="android:text">"Oi"</item>
     </style>
 
-    <style name="TopNavagationBar" >
+    <style name="TopNavagationBar">
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/yellow</item>
         <item name="android:background">@color/light_blue</item>
+        <item name="android:progressBackgroundTint">@color/yellow</item>
 
     </style>
 

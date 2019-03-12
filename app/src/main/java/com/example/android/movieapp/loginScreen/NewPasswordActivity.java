@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.android.movieapp.R;
 import com.example.android.movieapp.connect.NewPasswordObj;
-import com.example.android.movieapp.viewModel.NewPasswordViewModel;
+import com.example.android.movieapp.viewModelLogin.NewPasswordViewModel;
 
 public class NewPasswordActivity extends AppCompatActivity {
 

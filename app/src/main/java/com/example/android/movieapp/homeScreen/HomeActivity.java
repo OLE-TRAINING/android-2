@@ -1,21 +1,37 @@
 package com.example.android.movieapp.homeScreen;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.android.movieapp.HomeFragmentViewModel;
 import com.example.android.movieapp.R;
+import com.example.android.movieapp.connect.Genres;
+import com.example.android.movieapp.connect.ListGenres;
+import com.example.android.movieapp.connect.RetrofitConfig;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
 
     TextView titleActionBar;
     String text = "<font color=#FFFFFF><b>OT</b></font><font color=#FFFFFF>MOVIES</font>";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +43,8 @@ public class HomeActivity extends AppCompatActivity {
         titleActionBar = (TextView) findViewById(R.id.titleActionBar);
         titleActionBar.setText(Html.fromHtml(text));
 
+
+
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -34,8 +52,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-
     }
+
 
 
 
@@ -43,9 +61,9 @@ public class HomeActivity extends AppCompatActivity {
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    android.support.v4.app.Fragment selectedFragment =null;
+                    android.support.v4.app.Fragment selectedFragment = null;
 
-                    switch (item.getItemId()){
+                    switch (item.getItemId()) {
                         case R.id.icon_home:
                             selectedFragment = new HomeFragment();
                             break;
@@ -59,19 +77,11 @@ public class HomeActivity extends AppCompatActivity {
                             break;
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content,selectedFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content, selectedFragment).commit();
 
                     return true;
                 }
             };
-
-
-
-
-
-
-
-
 
 
 }
