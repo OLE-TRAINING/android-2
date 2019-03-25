@@ -1,4 +1,6 @@
-package com.example.android.movieapp.connect;
+package com.example.android.movieapp.model;
+
+import com.example.android.movieapp.model.Genres;
 
 import java.util.List;
 

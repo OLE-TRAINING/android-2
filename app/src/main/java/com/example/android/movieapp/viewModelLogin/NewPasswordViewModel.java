@@ -6,11 +6,11 @@ import android.arch.lifecycle.Observer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.android.movieapp.SuperClass.StatusSuperClass;
+import com.example.android.movieapp.superClass.StatusSuperClass;
 import com.example.android.movieapp.connect.NewPasswordObj;
 import com.example.android.movieapp.connect.ErrorMessage;
 import com.example.android.movieapp.connect.ResponseService;
-import com.example.android.movieapp.connect.User;
+import com.example.android.movieapp.model.User;
 import com.example.android.movieapp.repository.NewPasswordRepository;
 
 import java.util.regex.Matcher;

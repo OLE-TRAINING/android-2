@@ -63,11 +63,11 @@ public class RetrofitConfig {
                 Request request = chain.request();
                 System.out.println("TOKEM AQUI");
                 System.out.println(RetrofitConfig.tokenHeader);
-
                 okhttp3.Headers headers = request.headers().newBuilder().add("Authorization", "Bearer " + RetrofitConfig.tokenHeader).build();
                 request = request.newBuilder().headers(headers).build();
                 HttpUrl url = request.url().newBuilder().addQueryParameter(NAME_SERVICE, VALUE_SERVICE).build();
                 request = request.newBuilder().url(url).build();
+                RetrofitConfig.tokenHeader = chain.proceed(request).header("x-access-token");
 
 
                 return chain.proceed(request);

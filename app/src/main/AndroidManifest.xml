@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.movieapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,26 +19,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".loginScreen.NewAccountActivity"></activity>
-        <activity android:name=".loginScreen.TokenValidationActivity"
-            ></activity>
+        <activity android:name=".loginScreen.NewAccountActivity" />
+        <activity android:name=".loginScreen.TokenValidationActivity" />
         <activity
             android:name=".loginScreen.PasswordLoginActivity"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
-        <activity android:name=".loginScreen.SignUpContinueActivity"></activity>
-        <activity android:name=".loginScreen.NewPasswordActivity">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".loginScreen.SignUpContinueActivity" />
+        <activity android:name=".loginScreen.NewPasswordActivity"></activity>
         <activity
             android:name=".loginScreen.ResetPasswordConfirmActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".homeScreen.HomeActivity">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".homeScreen.HomeActivity"></activity>
+        <activity android:name=".homeScreen.MovieDetailActivity"></activity>
     </application>
 
 </manifest>

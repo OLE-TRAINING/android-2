@@ -1,9 +1,9 @@
 package com.example.android.movieapp.homeScreen;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,13 +14,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.android.movieapp.HomeFragmentViewModel;
 import com.example.android.movieapp.R;
-import com.example.android.movieapp.connect.Genres;
-import com.example.android.movieapp.connect.ListGenres;
 import com.example.android.movieapp.connect.RetrofitConfig;
-
-import java.util.List;
+import com.example.android.movieapp.model.ListGenres;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +27,6 @@ public class HomeActivity extends AppCompatActivity {
 
     TextView titleActionBar;
     String text = "<font color=#FFFFFF><b>OT</b></font><font color=#FFFFFF>MOVIES</font>";
-
 
 
     @Override
@@ -43,19 +39,13 @@ public class HomeActivity extends AppCompatActivity {
         titleActionBar = (TextView) findViewById(R.id.titleActionBar);
         titleActionBar.setText(Html.fromHtml(text));
 
-
-
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content, new HomeFragment()).commit();
 
-
-
     }
-
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

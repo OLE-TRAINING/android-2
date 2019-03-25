@@ -1,4 +1,4 @@
-package com.example.android.movieapp.connect;
+package com.example.android.movieapp.model;
 
 import java.io.Serializable;
 

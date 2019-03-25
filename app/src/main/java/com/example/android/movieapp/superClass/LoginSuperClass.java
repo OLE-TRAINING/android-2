@@ -1,4 +1,4 @@
-package com.example.android.movieapp.SuperClass;
+package com.example.android.movieapp.superClass;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;

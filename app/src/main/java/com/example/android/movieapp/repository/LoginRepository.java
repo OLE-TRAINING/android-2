@@ -8,13 +8,12 @@ import com.example.android.movieapp.connect.EmailService;
 import com.example.android.movieapp.connect.ErrorMessage;
 import com.example.android.movieapp.connect.ResponseService;
 import com.example.android.movieapp.connect.RetrofitConfig;
-import com.example.android.movieapp.connect.User;
+import com.example.android.movieapp.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

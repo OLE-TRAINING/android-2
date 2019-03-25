@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.movieapp.R;
-import com.example.android.movieapp.connect.User;
+import com.example.android.movieapp.model.User;
 import com.example.android.movieapp.homeScreen.HomeActivity;
 import com.example.android.movieapp.viewModelLogin.PasswordLoginViewModel;
 

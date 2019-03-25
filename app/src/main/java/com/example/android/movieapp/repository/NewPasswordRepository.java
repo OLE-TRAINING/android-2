@@ -7,7 +7,7 @@ import com.example.android.movieapp.connect.NewPasswordObj;
 import com.example.android.movieapp.connect.ErrorMessage;
 import com.example.android.movieapp.connect.ResponseService;
 import com.example.android.movieapp.connect.RetrofitConfig;
-import com.example.android.movieapp.connect.User;
+import com.example.android.movieapp.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
