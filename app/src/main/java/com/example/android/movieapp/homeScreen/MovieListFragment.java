@@ -34,7 +34,7 @@ public class MovieListFragment extends Fragment implements OnOpenDetailMovie{
     private int id;
     int page = 1;
     TextView text;
-    LinearLayoutManager linearLayoutManager;
+    private LinearLayoutManager linearLayoutManager;
     private View view;
     private ProgressBar progressBar;
 
@@ -73,16 +73,24 @@ public class MovieListFragment extends Fragment implements OnOpenDetailMovie{
         }
     };
 
+
+
     Observer<ListMovie> observerMovieList= new Observer<ListMovie>() {
         @Override
         public void onChanged(@Nullable ListMovie movieList) {
 
             if (page==1){
                 mAdapter.setMovieList(movieList);
+                mAdapter.addLoadingFooter();
             }
 
-            else if(page>1)
+            else if(page>1) {
+                mAdapter.removeLoadingFooter();
                 mAdapter.addAll(movieList);
+                mAdapter.addLoadingFooter();
+            }
+
+//
 
             isLoading = false;
             progressBar.setVisibility(View.INVISIBLE);

@@ -18,6 +18,7 @@ public class HomeFragmentViewModel extends AndroidViewModel {
     private MutableLiveData<ListGenres> listGenre = new MutableLiveData<>();
     private MutableLiveData<ListMovie> listMovie = new MutableLiveData<>();
 
+
     public HomeFragmentViewModel(@NonNull Application application) {
         super(application);
         this.homeRepository = new HomeRepository();
@@ -33,7 +34,7 @@ public class HomeFragmentViewModel extends AndroidViewModel {
     }
 
     public void initMovieList(String id, String page) {
-        homeRepository.getMovieList(id, page).observeForever(new Observer<ListMovie>() {
+        homeRepository.getMovieList(id, page,"genres").observeForever(new Observer<ListMovie>() {
             @Override
             public void onChanged(@Nullable ListMovie listMovie) {
                 getListMovie().setValue(listMovie);

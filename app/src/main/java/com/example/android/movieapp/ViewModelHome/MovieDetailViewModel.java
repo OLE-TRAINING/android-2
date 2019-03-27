@@ -15,6 +15,8 @@ public class MovieDetailViewModel extends AndroidViewModel {
 
     private HomeRepository homeRepository;
     private MutableLiveData<MovieDetail> movieDetail = new MutableLiveData<>();
+    private MutableLiveData<ListMovie> listMovie = new MutableLiveData<>();
+
 
     public MovieDetailViewModel(@NonNull Application application) {
         super(application);
@@ -35,7 +37,21 @@ public class MovieDetailViewModel extends AndroidViewModel {
     }
 
 
+    public void initMovieList(String id, String page) {
+        homeRepository.getMovieList(id, page,"similarity").observeForever(new Observer<ListMovie>() {
+            @Override
+            public void onChanged(@Nullable ListMovie listMovie) {
+                getListMovie().setValue(listMovie);
+            }
+        });
+    }
+
+
     public MutableLiveData<MovieDetail> getMovieDetail() {
         return movieDetail;
+    }
+
+    public MutableLiveData<ListMovie> getListMovie() {
+        return listMovie;
     }
 }

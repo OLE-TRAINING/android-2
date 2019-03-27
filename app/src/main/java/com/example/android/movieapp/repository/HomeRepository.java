@@ -38,9 +38,9 @@ public class HomeRepository {
         return data;
     }
 
-    public LiveData<ListMovie> getMovieList( String id,String page) {
+    public LiveData<ListMovie> getMovieList( String id,String page,String filter) {
 
-        Call<ListMovie> call = new RetrofitConfig().getMovieService().getListMovie("genres",id,"10",page);
+        Call<ListMovie> call = new RetrofitConfig().getMovieService().getListMovie(filter,id,"10",page);
         final MutableLiveData<ListMovie> data = new MutableLiveData<>();
 
         call.enqueue(new Callback<ListMovie>() {

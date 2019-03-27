@@ -7,14 +7,21 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.android.movieapp.R;
+import com.example.android.movieapp.ViewModelHome.HomeFragmentViewModel;
 import com.example.android.movieapp.ViewModelHome.MovieDetailViewModel;
 import com.example.android.movieapp.model.ListGenres;
+import com.example.android.movieapp.model.ListMovie;
 import com.example.android.movieapp.model.MovieDetail;
 import com.squareup.picasso.Picasso;
 
@@ -22,11 +29,17 @@ import java.sql.SQLOutput;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
-    String id;
+   private  String id;
+    int page = 1;
     TextView titleActionBar;
-    ImageView bannerMovie, posterMovie;
-    MovieDetailViewModel movieDetailViewModel;
+    private boolean isLoading = false;
+   private  ImageView bannerMovie, posterMovie;
+    private MovieDetailViewModel movieDetailViewModel;
     String text = "<font color=#FFFFFF><b>OT</b></font><font color=#FFFFFF>MOVIES</font>";
+    private RecyclerView mRecyclerView;
+    private ListMovieAdapter mAdapter;
+    private LinearLayoutManager linearLayoutManager;
+
 
 
     @Override
@@ -50,6 +63,46 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         movieDetailViewModel.getMovieDetail().observe(this, observerMovieDetail);
 
+        movieDetailViewModel = ViewModelProviders.of(this).get(MovieDetailViewModel.class);
+        movieDetailViewModel.initMovieList(String.valueOf(id),"1");
+
+        mAdapter = new ListMovieAdapter(this);
+
+        mRecyclerView = findViewById(R.id.recyclerview_movie_detail);
+
+
+        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        movieDetailViewModel.getListMovie().observe(this, observerMovieList);
+        mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.addOnScrollListener(new PaginationScrollListener(linearLayoutManager) {
+            @Override
+            protected void loadMoreItems() {
+                isLoading = true;
+                page++;
+                System.out.println("CHEGOU NO FINAL NA LISTAAA ------------*!");
+                movieDetailViewModel.initMovieList(String.valueOf(id),String.valueOf(page));
+            }
+
+            @Override
+            public int getTotalPageCount() {
+                return 10;
+            }
+
+            @Override
+            public boolean isLastPage() {
+                return false;
+            }
+
+            @Override
+            public boolean isLoading() {
+                return isLoading;
+            }
+        });
+
+
     }
 
     Observer<MovieDetail> observerMovieDetail = new Observer<MovieDetail>() {
@@ -65,6 +118,36 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         }
     };
+
+    Observer<ListMovie> observerMovieList= new Observer<ListMovie>() {
+        @Override
+        public void onChanged(@Nullable ListMovie movieList) {
+            if (page==1){
+                mAdapter.setMovieList(movieList);
+                mAdapter.addLoadingFooter();
+            }
+
+            else if(page>1) {
+                mAdapter.removeLoadingFooter();
+                mAdapter.addAll(movieList);
+                mAdapter.addLoadingFooter();
+            }
+
+//
+
+            isLoading = false;
+
+
+        }
+    };
+
+    public boolean isLoading() {
+        return isLoading;
+    }
+
+    public void setLoading(boolean loading) {
+        isLoading = loading;
+    }
 
 
 }
