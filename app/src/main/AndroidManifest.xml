@@ -30,7 +30,8 @@
         <activity
             android:name=".loginScreen.ResetPasswordConfirmActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".homeScreen.HomeActivity"></activity>
+        <activity android:name=".homeScreen.HomeActivity"
+            android:configChanges="orientation"></activity>
         <activity android:name=".homeScreen.MovieDetailActivity"></activity>
     </application>
 

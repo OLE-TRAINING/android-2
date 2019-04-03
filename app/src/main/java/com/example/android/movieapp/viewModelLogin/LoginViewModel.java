@@ -23,7 +23,7 @@ public class LoginViewModel extends StatusSuperClass {
     private ErrorMessage errorMessage;
     public int flag = 0;
 
-    private MutableLiveData<String> nextScreen = new MutableLiveData<>();
+    private MutableLiveData<User> nextScreen = new MutableLiveData<>();
     private MutableLiveData<Boolean> emailValid = new MutableLiveData<>();
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -57,12 +57,11 @@ public class LoginViewModel extends StatusSuperClass {
                         User usuario = responseService.get();
 
                         if ((usuario.getRegistrationStatus()).equals("PENDING"))
-                            getNextScreen().setValue("PENDING");
+                            getNextScreen().setValue(usuario);
                         else if ((usuario.getRegistrationStatus()).equals("REGISTERED"))
-                            getNextScreen().setValue("REGISTERED");
+                            getNextScreen().setValue(usuario);
                         else if ((usuario.getRegistrationStatus()).equals("INEXISTENT"))
-                            getNextScreen().setValue("INEXISTENT");
-                        else getNextScreen().setValue("TERACAO");
+                            getNextScreen().setValue(usuario);
                         getLoading().setValue(false);
                         //LoginViewModel.userObj = usuario;
                     }else {
@@ -76,7 +75,7 @@ public class LoginViewModel extends StatusSuperClass {
 
     }
 
-    public MutableLiveData<String> getNextScreen() {
+    public MutableLiveData<User> getNextScreen() {
         return nextScreen;
     }
 

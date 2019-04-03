@@ -27,7 +27,7 @@ public class PasswordLoginActivity extends AppCompatActivity {
     private TextView viewEmail;
     private View view;
     private User user;
-    private String email;
+    private User usuarioIntent;
     private  Toast toast;
     private Loading loadingView;
     private Intent newPasswordIntent;
@@ -36,6 +36,9 @@ public class PasswordLoginActivity extends AppCompatActivity {
     private AlertDialog.Builder builder;
 
     public final static String NEW_PASSWORD_MESSAGE =
+            "com.example.mysampleapp.MESSAGE";
+
+    public final static String EMAIL_MESSAGE =
             "com.example.mysampleapp.MESSAGE";
 
     private PasswordLoginViewModel passwordLoginViewModel;
@@ -54,8 +57,9 @@ public class PasswordLoginActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        email = intent.getStringExtra(LoginActivity.EMAIL_MESSAGE);
-        viewEmail.setText(email);
+        usuarioIntent = (User) intent.getSerializableExtra(LoginActivity.EMAIL_MESSAGE);
+
+        viewEmail.setText(usuarioIntent.getEmail());
 
         /*Toast toast = Toast.makeText(this, "Usuário ou senha inválido!", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
@@ -87,6 +91,7 @@ public class PasswordLoginActivity extends AppCompatActivity {
         public void onChanged(@Nullable String status) {
             if((status).equals("Ok")){
 
+                homeIntent.putExtra(EMAIL_MESSAGE, usuarioIntent);
                 startActivity(homeIntent);
             }
             else if ((status).equals("Senha incorreta")) {
@@ -114,7 +119,7 @@ public class PasswordLoginActivity extends AppCompatActivity {
     public void buttonPasswordLogin(View view) {
         this.setView(view);
         user = new User();
-        user.setEmail(email);
+        user.setEmail(usuarioIntent.getEmail());
         user.setPassword(editPassword.getText().toString());
         passwordLoginViewModel.init(user);
 
@@ -130,9 +135,9 @@ public class PasswordLoginActivity extends AppCompatActivity {
 
     public void lauchLink(View view) {
 
-        passwordLoginViewModel.initSendToken(email);
+        passwordLoginViewModel.initSendToken(usuarioIntent.getEmail());
         newPasswordIntent = new Intent(this, NewPasswordActivity.class);
-        newPasswordIntent.putExtra(NEW_PASSWORD_MESSAGE, email);
+        newPasswordIntent.putExtra(NEW_PASSWORD_MESSAGE, usuarioIntent.getEmail());
         startActivity(newPasswordIntent);
         Toast toast = Toast.makeText(this, "Clique Novamente", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);

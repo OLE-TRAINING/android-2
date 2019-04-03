@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.android.movieapp.R;
+import com.example.android.movieapp.model.User;
 import com.example.android.movieapp.viewModelLogin.LoginViewModel;
 
 import java.util.concurrent.ExecutionException;
@@ -37,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     private View view;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,14 +58,14 @@ public class LoginActivity extends AppCompatActivity {
     Observer<Boolean> observerValidEmail = new Observer<Boolean>() {
         @Override
         public void onChanged(@Nullable Boolean aBoolean) {
-            emailView.setVisibleError(getView(),aBoolean);
+            emailView.setVisibleError(getView(), aBoolean);
         }
     };
 
     Observer<Boolean> observerLoading = new Observer<Boolean>() {
         @Override
         public void onChanged(@Nullable Boolean aBoolean) {
-            loadingView.setLoadingView(getView(),aBoolean);
+            loadingView.setLoadingView(getView(), aBoolean);
         }
     };
 
@@ -80,21 +80,20 @@ public class LoginActivity extends AppCompatActivity {
     };
 
 
-    Observer<String> observerEmail = new Observer<String>() {
+    Observer<User> observerEmail = new Observer<User>() {
         @Override
-        public void onChanged(@Nullable String state) {
+        public void onChanged(@Nullable User usuario) {
 
 
-            if (new String(state).equals("REGISTERED")) {
-                passwordLoginIntent.putExtra(EMAIL_MESSAGE, email);
+            if (new String(usuario.getRegistrationStatus()).equals("REGISTERED")) {
+                passwordLoginIntent.putExtra(EMAIL_MESSAGE, usuario);
                 startActivity(passwordLoginIntent);
 
-            } else if (new String(state).equals("PENDING")) {
-                System.out.println("ENTROU PEDGINGGGGG");
-                tokenIntent.putExtra(EMAIL_MESSAGE, email);
+            } else if (new String(usuario.getRegistrationStatus()).equals("PENDING")) {
+                tokenIntent.putExtra(EMAIL_MESSAGE, usuario);
                 startActivity(tokenIntent);
-            } else if (new String(state).equals("INEXISTENT")) {
-                newAccountIntent.putExtra(EMAIL_MESSAGE, email);
+            } else if (new String(usuario.getRegistrationStatus()).equals("INEXISTENT")) {
+                newAccountIntent.putExtra(EMAIL_MESSAGE, usuario);
                 startActivity(newAccountIntent);
             }
 
@@ -102,12 +101,11 @@ public class LoginActivity extends AppCompatActivity {
     };
 
 
-
-    public View getView(){
+    public View getView() {
         return this.view;
     }
 
-    public void setView(View v){
+    public void setView(View v) {
         this.view = v;
     }
 
@@ -116,17 +114,17 @@ public class LoginActivity extends AppCompatActivity {
 
         email = emailView.getEditText();
 
-            this.setView(view);
-            this.loginViewModel.init(email);
+        this.setView(view);
+        this.loginViewModel.init(email);
 
-            loginViewModel.getEmailValid().observe(this,observerValidEmail);
-            loginViewModel.getNextScreen().observe(this, observerEmail);
-            loginViewModel.getLoading().observe(this,observerLoading);
-        loginViewModel.getStatus().observe(this,observerStatus);
+        loginViewModel.getEmailValid().observe(this, observerValidEmail);
+        loginViewModel.getNextScreen().observe(this, observerEmail);
+        loginViewModel.getLoading().observe(this, observerLoading);
+        loginViewModel.getStatus().observe(this, observerStatus);
 
-            passwordLoginIntent = new Intent(this, PasswordLoginActivity.class);
-            newAccountIntent = new Intent(this, NewAccountActivity.class);
-            tokenIntent = new Intent(this, SignUpContinueActivity.class);
+        passwordLoginIntent = new Intent(this, PasswordLoginActivity.class);
+        newAccountIntent = new Intent(this, NewAccountActivity.class);
+        tokenIntent = new Intent(this, SignUpContinueActivity.class);
 
     }
 

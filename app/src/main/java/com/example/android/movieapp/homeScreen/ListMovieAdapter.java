@@ -88,8 +88,6 @@ public class ListMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                 url = String.format("https://ole.dev.gateway.zup.me/client-training/v1/movies/%s/image/w500?gw-app-key=593c3280aedd01364c73000d3ac06d76", movieList.getMovie().get(position).getPosterId());
 
-
-
                 movieViewHolder.movieTitle.setText(movieList.getMovie().get(position).getTitle());
                 movieViewHolder.movieRunTime.setText(movieList.getMovie().get(position).getRuntime());
                 movieViewHolder.moviePrice.setText(String.valueOf(movieList.getMovie().get(position).getPrice()));
@@ -119,8 +117,6 @@ public class ListMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     }
 
-
-
     @Override
     public int getItemCount() {
 
@@ -130,7 +126,6 @@ public class ListMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         return movieList.getMovie().size();
     }
-
 
 
     class MovieViewHolder extends RecyclerView.ViewHolder {

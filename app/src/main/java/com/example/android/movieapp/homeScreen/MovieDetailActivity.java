@@ -32,6 +32,7 @@ public class MovieDetailActivity extends AppCompatActivity {
    private  String id;
     int page = 1;
     TextView titleActionBar;
+    private TextView description;
     private boolean isLoading = false;
    private  ImageView bannerMovie, posterMovie;
     private MovieDetailViewModel movieDetailViewModel;
@@ -57,7 +58,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        id = intent.getStringExtra(MovieListFragment.EXTRA_MESSAGE_OBJECT);
+        id = intent.getStringExtra("ID");
 
         movieDetailViewModel.init(id);
 
@@ -69,6 +70,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         mAdapter = new ListMovieAdapter(this);
 
         mRecyclerView = findViewById(R.id.recyclerview_movie_detail);
+
 
 
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -111,6 +113,8 @@ public class MovieDetailActivity extends AppCompatActivity {
 
             bannerMovie = (ImageView) findViewById(R.id.banner_movie_detail);
             posterMovie = (ImageView) findViewById(R.id.poster_movie_detail);
+            description = (TextView) findViewById(R.id.description_detail);
+            description.setText(movieDetail.getOverview());
             String url = String.format("https://ole.dev.gateway.zup.me/client-training/v1/movies/%s/image/w500?gw-app-key=593c3280aedd01364c73000d3ac06d76", movieDetail.getBannerId());
             String urlPoster = String.format("https://ole.dev.gateway.zup.me/client-training/v1/movies/%s/image/w500?gw-app-key=593c3280aedd01364c73000d3ac06d76", movieDetail.getPosterId());
             Picasso.with(MovieDetailActivity.this).load(url).fit().centerCrop().into(bannerMovie);
