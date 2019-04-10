@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.movieapp.R;
@@ -32,6 +33,7 @@ public class SearchFragment extends Fragment implements OnOpenDetailMovie {
     private EditText editText;
     private LinearLayoutManager linearLayoutManager;
     private RecyclerView mRecyclerView;
+    private ImageView backButton;
     private ListMovieAdapter mAdapter;
     private Timer timer;
     public static final String EXTRA_MESSAGE_OBJECT =
@@ -45,7 +47,10 @@ public class SearchFragment extends Fragment implements OnOpenDetailMovie {
 
         editText = v.findViewById(R.id.edit_search);
 
+        backButton = v.findViewById(R.id.back_search);
+
         searchFragmentViewModel =  ViewModelProviders.of(this).get(SearchFragmentViewModel.class);
+
 
 
         editText.addTextChangedListener(new TextWatcher() {
@@ -79,9 +84,7 @@ public class SearchFragment extends Fragment implements OnOpenDetailMovie {
 
 
         mAdapter = new ListMovieAdapter(v.getContext());
-
         mRecyclerView = v.findViewById(R.id.recyclerview_search);
-
         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -89,12 +92,7 @@ public class SearchFragment extends Fragment implements OnOpenDetailMovie {
         mAdapter.setOpenDetailMovie(this);
         mRecyclerView.setAdapter(mAdapter);
 
-
         return v;
-
-
-
-
     }
 
     Observer<ListMovie> observerMovieList= new Observer<ListMovie>() {

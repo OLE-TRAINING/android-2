@@ -91,6 +91,15 @@
 
                 </android.support.v7.widget.LinearLayoutCompat>
 
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DCDCDC"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/navigation_profile"/>
+
+
                 <android.support.v7.widget.LinearLayoutCompat
                     android:id="@+id/navigation_shop"
                     android:layout_width="wrap_content"
@@ -114,6 +123,13 @@
                         android:textSize="14dp" />
 
                 </android.support.v7.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DCDCDC"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/navigation_shop"/>
 
                 <android.support.v7.widget.LinearLayoutCompat
                     android:id="@+id/navigation_setting"
@@ -139,7 +155,15 @@
 
                 </android.support.v7.widget.LinearLayoutCompat>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DCDCDC"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/navigation_setting"/>
+
                 <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/logout_navigation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -161,6 +185,12 @@
 
 
                 </android.support.v7.widget.LinearLayoutCompat>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DCDCDC"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/logout_navigation"/>
 
 
 

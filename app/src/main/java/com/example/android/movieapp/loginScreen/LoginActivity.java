@@ -90,10 +90,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(passwordLoginIntent);
 
             } else if (new String(usuario.getRegistrationStatus()).equals("PENDING")) {
-                tokenIntent.putExtra(EMAIL_MESSAGE, usuario);
+                tokenIntent.putExtra(EMAIL_MESSAGE, usuario.getEmail());
                 startActivity(tokenIntent);
             } else if (new String(usuario.getRegistrationStatus()).equals("INEXISTENT")) {
-                newAccountIntent.putExtra(EMAIL_MESSAGE, usuario);
+                newAccountIntent.putExtra(EMAIL_MESSAGE, email);
                 startActivity(newAccountIntent);
             }
 

@@ -17,35 +17,31 @@ public class MovieDetailViewModel extends AndroidViewModel {
     private MutableLiveData<MovieDetail> movieDetail = new MutableLiveData<>();
     private MutableLiveData<ListMovie> listMovie = new MutableLiveData<>();
 
-
     public MovieDetailViewModel(@NonNull Application application) {
         super(application);
-
         this.homeRepository = new HomeRepository();
     }
 
-    public void init(String id){
-
-      homeRepository.getMovieDetail(id).observeForever(new Observer<MovieDetail>() {
-           @Override
+    public void init(String id) {
+        System.out.println("ENTRANDO INIT MOVEIDETAILVIEWMODEL");
+        homeRepository.getMovieDetail(id).observeForever(new Observer<MovieDetail>() {
+            @Override
             public void onChanged(@Nullable MovieDetail movieDetail) {
                 getMovieDetail().setValue(movieDetail);
-//                System.out.println("AQUI VAI SER PRINTADO O FILME DA MOVIDETAIL VIEWMODEL ------------------- * ------------ * ----------");
+                System.out.println("AQUI VAI SER PRINTADO O FILME DA MOVIDETAIL VIEWMODEL ------------------- * ------------ * ----------");
 //            System.out.println(movieDetail.getTitle());
             }
-       });
+        });
     }
 
-
     public void initMovieList(String id, String page) {
-        homeRepository.getMovieList(id, page,"similarity").observeForever(new Observer<ListMovie>() {
+        homeRepository.getMovieList(id, page, "similarity").observeForever(new Observer<ListMovie>() {
             @Override
             public void onChanged(@Nullable ListMovie listMovie) {
                 getListMovie().setValue(listMovie);
             }
         });
     }
-
 
     public MutableLiveData<MovieDetail> getMovieDetail() {
         return movieDetail;

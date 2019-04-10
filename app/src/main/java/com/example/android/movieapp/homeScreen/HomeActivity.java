@@ -71,11 +71,10 @@ public class HomeActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.icon_home:
                             selectedFragment = HomeFragment.newInstance(usuarioIntent);
-
                             break;
 
                         case R.id.icon_favorite:
-                            selectedFragment = new FavoriteFragment();
+                            selectedFragment = FavoriteFragment.newInstance(usuarioIntent.getEmail());
                             break;
 
                         case R.id.icon_search:

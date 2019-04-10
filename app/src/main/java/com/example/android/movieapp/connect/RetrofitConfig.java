@@ -42,19 +42,17 @@ public class RetrofitConfig {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request();
-                client.connectTimeout(30, TimeUnit.SECONDS); // connect timeout
-                client.readTimeout(30, TimeUnit.SECONDS);
+
                 HttpUrl url = request.url().newBuilder().addQueryParameter(NAME_SERVICE, VALUE_SERVICE).build();
                 request = request.newBuilder().url(url).build();
 
-
-                RetrofitConfig.tokenHeader = chain.proceed(request).header("x-access-token");
-                System.out.println("AQUI SERÁ PRINTADO O TOKEN NO RETROFIT");
+                System.out.println("AQUI SERÁ PRINTADO O TOKEN NO RETROFIT: "+RetrofitConfig.tokenHeader);
                 System.out.println(tokenHeader);
-
                 return chain.proceed(request);
             }
-        });
+        }).connectTimeout(30, TimeUnit.SECONDS) // connect timeout
+                .writeTimeout(30, TimeUnit.SECONDS) // write timeout
+                .readTimeout(30, TimeUnit.SECONDS);
         client.addInterceptor(logger);
 
         homeService.addInterceptor(new Interceptor() {
@@ -68,7 +66,6 @@ public class RetrofitConfig {
                 HttpUrl url = request.url().newBuilder().addQueryParameter(NAME_SERVICE, VALUE_SERVICE).build();
                 request = request.newBuilder().url(url).build();
                 RetrofitConfig.tokenHeader = chain.proceed(request).header("x-access-token");
-
 
                 return chain.proceed(request);
             }

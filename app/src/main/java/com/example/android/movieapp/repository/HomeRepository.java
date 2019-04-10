@@ -60,44 +60,44 @@ public class HomeRepository {
     }
 
     public LiveData<MovieDetail> getMovieDetail(String id){
-
         Call<MovieDetail> call = new RetrofitConfig().getMovieService().getDetailMovie(id);
         final MutableLiveData<MovieDetail> data = new MutableLiveData<>();
+        System.out.println("ENTROI GETMOVIE DETAAAAIL");
         call.enqueue(new Callback<MovieDetail>() {
             @Override
             public void onResponse(Call<MovieDetail> call, Response<MovieDetail> response) {
                 MovieDetail movieDetail = response.body();
+                System.out.println("PRINTANDO NO REPOSITARIOOOOOO");
+                System.out.println(movieDetail.getTitle());
                 data.setValue(response.body());
-
             }
 
             @Override
             public void onFailure(Call<MovieDetail> call, Throwable t) {
                 Log.e("EMAILService   ", "Erro ao buscar o email:" + t.getMessage());
+                System.out.println("NAO DEU CERTOOOO");
             }
         });
 
         return data;
     }
 
-//    public  void getImageMovie( String id) {
-//
-//        Call<Void> call = new RetrofitConfig().getMovieService().getImageMovie(id,"original");
-//        final MutableLiveData<ListMovie> data = new MutableLiveData<>();
-//
-//        call.enqueue(new Callback<Void>() {
-//            @Override
-//            public void onResponse(Call<Void> call, Response<Void> response) {
-//               // data.setValue(response.body());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Void> call, Throwable t) {
-//                Log.e("EMAILService", "Erro ao buscar o email:" + t.getMessage());
-//            }
-//        });
-//
-//
-//    }
+    public LiveData<ListMovie> getMovieFavorite(String email){
+        Call<ListMovie> call = new RetrofitConfig().getMovieService().getFavoriteMovie(email);
+        final MutableLiveData<ListMovie> data = new MutableLiveData<>();
+        call.enqueue(new Callback<ListMovie>() {
+            @Override
+            public void onResponse(Call<ListMovie> call, Response<ListMovie> response) {
+                data.setValue(response.body());
+            }
 
+            @Override
+            public void onFailure(Call<ListMovie> call, Throwable t) {
+                Log.e("EMAILService   ", "Erro ao buscar o email:" + t.getMessage());
+                System.out.println("NAO DEU CERTOOOO");
+            }
+        });
+
+        return data;
+    }
 }

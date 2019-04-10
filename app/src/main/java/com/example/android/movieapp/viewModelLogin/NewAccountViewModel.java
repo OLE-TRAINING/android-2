@@ -62,13 +62,14 @@ public class NewAccountViewModel extends StatusSuperClass {
             //newAccountRepository.setUser(user);
             getLoading().setValue(true);
             System.out.println("ELSEEEEEMODEL");
+
             newAccountRepository.setUser(user).observeForever(new Observer<ResponseService<User>>() {
                 @Override
                 public void onChanged(@Nullable ResponseService<User> responseService) {
 
-
                     if (responseService.getStatus()) {
 
+                        System.out.println("OKKK VUEW MODEL--------------------------");
                         getStatus().setValue("Ok");
                     }
 

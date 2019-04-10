@@ -13,6 +13,14 @@ public class MovieDetail {
     private String title;
     private String year;
     private List<String> genreNames = new ArrayList<>();
+    private String runtime;
+    private String overview;
+    private Boolean favorit;
+    private String price;
+    private Boolean acquired;
+    private List<String> directors;
+    private List<String> writers;
+    private List<String> countries;
 
     public String getId() {
         return id;
@@ -141,14 +149,5 @@ public class MovieDetail {
     public void setCountries(List<String> countries) {
         this.countries = countries;
     }
-
-    private String runtime;
-    private String overview;
-    private Boolean favorit;
-    private String price;
-    private Boolean acquired;
-    private List<String> directors;
-    private List<String> writers;
-    private List<String> countries;
 
 }

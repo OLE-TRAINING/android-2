@@ -1,5 +1,6 @@
 package com.example.android.movieapp.homeScreen;
 
+import android.app.Dialog;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +39,7 @@ public class HomeFragment extends Fragment  {
 
     private HomeFragmentViewModel homeFragmentViewModel;
     private NavigationView navigationView;
+    private LinearLayoutCompat logoutButton;
     private TabLayout tabLayout;
     private TextView emailView;
     private TextView userView;
@@ -72,6 +75,7 @@ public class HomeFragment extends Fragment  {
 
         navigationButton = v.findViewById(R.id.button_navigation);
         navigationView = v.findViewById(R.id.navigation_home);
+        logoutButton = v.findViewById(R.id.logout_navigation);
         emailView = v.findViewById(R.id.email_navigation);
         userView = v.findViewById(R.id.user_navigation);
 
@@ -81,11 +85,23 @@ public class HomeFragment extends Fragment  {
             @Override
             public void onClick(View v)
             {
-                System.out.println("BELA TIAAAAU------");
+
                 navigationView.setVisibility(View.VISIBLE);
                 readBundle(getArguments());
                 emailView.setText(user.getEmail());
                 userView.setText(user.getUsername());
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                System.out.println("CLICOOOOU NO loguoooooot");
+
+                LogoutDialog cdd = new LogoutDialog(getActivity());
+                cdd.show();
             }
         });
 
@@ -138,6 +154,8 @@ public class HomeFragment extends Fragment  {
         return v;
 
     }
+
+
 
 
 

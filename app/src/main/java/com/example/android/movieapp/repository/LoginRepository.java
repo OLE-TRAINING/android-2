@@ -58,7 +58,6 @@ public class LoginRepository {
                     }
 
                 }
-
             }
 
             @Override
@@ -71,7 +70,6 @@ public class LoginRepository {
     }
 
     public LiveData<ResponseService<User>> setLogin(User user) {
-
         errorMessage = new ErrorMessage();
         ResponseService auxUser = new ResponseService();
         Call<Void> call = new RetrofitConfig().getEmailService().setLogin(user);

@@ -24,9 +24,12 @@ public interface MovieService {
                                  @Query("amount")String amount,
                                  @Query("page") String page);
 
-    @GET("movies/{id}/image/{size}")
-    Call<Void> getImageMovie(@Path("id") String id, @Path("size") String size);
 
     @GET("movies/{id}/detail")
     Call<MovieDetail> getDetailMovie(@Path("id") String id);
+
+    @GET("users/{email}/favorits")
+    Call<ListMovie> getFavoriteMovie(@Path("email") String email);
+
+
 }

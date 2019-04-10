@@ -11,11 +11,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.movieapp.R;
+import com.example.android.movieapp.model.User;
 import com.squareup.picasso.Picasso;
 
 public class FavoriteFragment extends Fragment {
 
     private TextView textView;
+    private String email;
+
+    public static HomeFragment newInstance(String email){
+
+        HomeFragment homeFragment = new HomeFragment();
+
+        Bundle args = new Bundle();
+        args.putString("email",email);
+        homeFragment.setArguments(args);
+
+        return homeFragment;
+    }
+
+    private void readBundle(Bundle bundle) {
+        if (bundle != null) {
+            email = (String) bundle.getString("email");
+        }
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,7 +47,7 @@ public class FavoriteFragment extends Fragment {
 
         Picasso.with(getActivity().getApplicationContext()).load("https://ole.dev.gateway.zup.me/client-training/v1/movies/hVgLHgnsO46oSHJy5I4ekhqtoYv/image/w342?gw-app-key=593c3280aedd01364c73000d3ac06d76").into(imageMovie);
 
-        textView.setText("TCHOU");
+        textView.setText(email);
         return v;
     }
 }
