@@ -1,0 +1,22 @@
+package com.example.android.movieapp.model;
+
+import com.example.android.movieapp.model.Genres;
+
+import java.util.List;
+
+public class ListGenres {
+
+
+    private final List<Genres> genres;
+
+    public ListGenres(List<Genres> listGenres) {
+        this.genres = listGenres;
+    }
+
+
+    public List<Genres> getListGenres() {
+        return this.genres;
+    }
+
+
+}
